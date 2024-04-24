@@ -1,0 +1,16 @@
+.sortBtn{
+    font-family: 'Ownglyph_meetme-Rg', sans-serif;
+    background: #3badff ;
+    height: 35px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+}
+.sortBtn:hover{
+    color: white;
+    background: #8738fd ;
+}

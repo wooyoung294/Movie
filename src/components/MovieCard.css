@@ -1,0 +1,76 @@
+.posterContainer {
+    width: inherit;
+    height: 500px;
+    transition: 0.1s;
+}
+
+.posterContainer:hover {
+    scale: 1.01;
+}
+
+.posterImage {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    text-align: center;
+    color: whitesmoke;
+    background-color: whitesmoke;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.posterTextArea {
+    font-family: 'Ownglyph_meetme-Rg', sans-serif;
+    font-size: 18px;
+    width: inherit;
+    background: #f3f3f3;
+}
+
+.posterTitle {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.posterRatingArea {
+    display: flex;
+    justify-content: space-between;
+}
+
+.genreBadgesContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.genreBadgesContainer > span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.reactTooltip {
+    z-index: 600 !important;
+}
+
+.detailBtn {
+    font-family: 'Ownglyph_meetme-Rg', sans-serif;
+    background: #3badff;
+    height: 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+}
+.detailBtn:hover{
+    color: white;
+    background: #8738fd ;
+}

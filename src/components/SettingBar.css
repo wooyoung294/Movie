@@ -1,0 +1,14 @@
+.settingBarContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.setting{
+    font-family: 'Ownglyph_meetme-Rg', sans-serif;
+    font-size: 18px;
+}
+.sortBtnContainer{
+    display: flex;
+    align-items: center;
+}

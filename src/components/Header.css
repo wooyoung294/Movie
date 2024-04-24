@@ -1,0 +1,11 @@
+.headerContainer{
+    font-family: 'Ownglyph_meetme-Rg', sans-serif;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(147deg, #3badff 0%, #8738fd 74%);
+    font-size: 46px;
+
+}

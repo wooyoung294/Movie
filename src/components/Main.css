@@ -1,0 +1,40 @@
+.main{
+    max-height: calc(100vh - 75px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 10px;
+}
+.movieCardContainer{
+    width: 100%;
+    max-height: max-content;
+    margin: 10px auto 0;
+    display: grid;
+    column-gap: 1%;
+    grid-template-columns: 19% 19% 19% 19% 19%;
+
+}
+.pagination{
+    font-family: 'Ownglyph_meetme-Rg', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    gap: 10px;
+    margin-top: 0;
+}
+.unActivePage{
+    color: #131313;
+}
+.activePage{
+    color:#8738fd;
+    font-weight: bold;
+}
+.pagination > li{
+    list-style-type: none;
+}
+.pagination > li > a{
+    text-decoration-line: none;
+}
+.react-tooltip{
+    z-index: 500;
+}
