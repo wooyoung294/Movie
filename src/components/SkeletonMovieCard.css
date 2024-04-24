@@ -1,0 +1,100 @@
+.posterContainer {
+    width: inherit;
+    height: 500px;
+    transition: 0.1s;
+}
+
+
+.posterImage {
+    width: 100%;
+    height: 400px !important;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    text-align: center;
+    color: whitesmoke;
+    background-color: whitesmoke;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.posterTextArea {
+    font-family: 'Ownglyph_meetme-Rg', sans-serif;
+    font-size: 18px;
+    width: inherit;
+    background: #f3f3f3;
+}
+
+.posterTitle {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.posterRatingArea {
+    display: flex;
+    justify-content: space-between;
+}
+
+.genreBadgesContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.genreBadgesContainer > span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.detailBtn {
+    font-family: 'Ownglyph_meetme-Rg', sans-serif;
+    height: 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+}
+
+@keyframes skeleton-gradient {
+    0% {
+        background-color: rgba(165, 165, 165, 0.3);
+    }
+    25% {
+        background-color: rgba(165, 165, 165, 0.5);
+    }
+    50% {
+        background-color: rgba(165, 165, 165, 0.7);
+    }
+    75% {
+        background-color: rgba(165, 165, 165, 0.5);
+    }
+    100% {
+        background-color: rgba(165, 165, 165, 0.3);
+    }
+}
+.SkeletonItem{
+    height: 20px;
+    background-color: #f2f2f2;
+    color: #f2f2f2;
+    position: relative;
+    overflow: hidden;
+}
+
+.SkeletonItem:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: skeleton-gradient 1.5s infinite ease-in-out;
+}
