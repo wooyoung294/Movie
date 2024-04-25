@@ -7,13 +7,22 @@ import useOrderStore from "../store/orderStore";
 import {useQuery} from "@tanstack/react-query";
 import {getMovieGenres, getNowPlayingMovie} from "../api/Movie";
 import SkeletonMovieCard from "./SkeletonMovieCard";
+import DetailModal from "./DetailModal";
+import {enableBodyScroll} from "body-scroll-lock";
 type movieCardContainerType ={
     handledScroll:()=>void;
 }
 function MovieCardContainer({handledScroll}:movieCardContainerType) {
-    const {language, setLanguage} = useLanguageStore()
+    const {language} = useLanguageStore()
     const {orderType,orderBy} = useOrderStore()
     const [activePage, setActivePage] = useState<number>(1)
+    const [modal,setModal] = useState<{ open:boolean,id:null|number }>
+    ({open:false,id:null})
+    const body = document.querySelector('body') as HTMLElement;
+    const handledModalClose = ()=>{
+        enableBodyScroll(body);
+        setModal({open: false,id:null})
+    }
     const onChangeActivePage = (pageNum:number)=>{
         if(pageNum>total_pages){
             alert('마지막 페이지입니다.')
@@ -63,6 +72,7 @@ function MovieCardContainer({handledScroll}:movieCardContainerType) {
                                    vote_average={result.vote_average}
                                    poster_path={result.poster_path}
                                    genres={result.genres}
+                                   setModal={setModal}
                                    key={result.id}
                         />
                     )
@@ -77,6 +87,7 @@ function MovieCardContainer({handledScroll}:movieCardContainerType) {
                 activeLinkClass={'activePage'}
                 disabledClass={'disabledPage'}
             />
+            <DetailModal id={modal.id} open={modal.open} handledModalClose={handledModalClose}/>
         </>
     );
 }

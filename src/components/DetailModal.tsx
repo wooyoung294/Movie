@@ -18,7 +18,7 @@ const detailModalStyles = {
     },
 };
 type detailModalType={
-    id:number,
+    id:number|null,
     open:boolean,
     handledModalClose:()=>void
 }
@@ -27,7 +27,7 @@ function DetailModal({id,open,handledModalClose}:detailModalType) {
     const { data,refetch} =
         useQuery(
             { queryKey: ["movie", "detail"],
-                queryFn: () => getMovieDetailById(language,id),
+                queryFn: () => getMovieDetailById(language,id as number),
                 enabled:false
             }
         );

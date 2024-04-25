@@ -5,17 +5,16 @@ import 'rc-rate/assets/index.css'
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import eye from '../assets/img/eye-fill.svg'
 import useLanguageStore from "../store/languageStore";
-import DetailModal from "./DetailModal";
-import {disableBodyScroll, enableBodyScroll} from "body-scroll-lock";
+import {disableBodyScroll} from "body-scroll-lock";
 type movieCardType={
     id:number,
     title:string,
     vote_average:number,
     poster_path:string,
-    genres: string[]
+    genres: string[],
+    setModal: (value: React.SetStateAction<{ open:boolean,id:null|number }>) => void
 }
-function MovieCard({id,title,vote_average,poster_path,genres}:movieCardType) {
-    const [modal,setModal] = useState<boolean>(false)
+function MovieCard({id,title,vote_average,poster_path,genres,setModal}:movieCardType) {
     const {language,} = useLanguageStore()
     const titleDiv = useRef<HTMLDivElement>(null);
     const [tooltip,setTooltip] = useState(false);
@@ -29,12 +28,9 @@ function MovieCard({id,title,vote_average,poster_path,genres}:movieCardType) {
     const body = document.querySelector('body') as HTMLElement;
     const onClickDetailBtn = ()=>{
         disableBodyScroll(body)
-        setModal(true)
+        setModal({open:true,id:id})
     }
-    const handledModalClose = ()=>{
-        enableBodyScroll(body);
-        setModal(false)
-    }
+
     return (
         <>
             <div className={'posterContainer'}>
@@ -76,7 +72,6 @@ function MovieCard({id,title,vote_average,poster_path,genres}:movieCardType) {
                     />
                 </div>
             </div>
-            <DetailModal id={id} open={modal} handledModalClose={handledModalClose}/>
     </>
 
     );
